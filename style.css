@@ -18,8 +18,7 @@ body {
         hsl(167, 94%, 46%)
     );
 }
-main {
-}
+
 h1 {
     color: azure;
     text-align: center;
@@ -74,4 +73,43 @@ footer {
     background: linear-gradient(270deg, #f44336 0%, #e91e63 50%, #3f51b5 100%);
     background-size: 400%;
     animation: gradientSlide 4s ease-out infinite;
+}
+/* second card*/
+
+.card-container {
+    position: relative;
+    width: 18rem;
+    perspective: 200rem;
+    height: 412px;
+}
+
+.card-container:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.card-container:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all 0.9s;
+    backface-visibility: hidden;
+}
+
+.card-back .card-body {
+    position: relative;
+}
+
+.card-body a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -15% 0 0 -23%;
 }

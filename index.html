@@ -1,0 +1,371 @@
+
+<!--
+IMPORTANT:
+Start from the previous Musical assignment project you've created on M2-D2
+    
+ASSIGNMENT RULES
+- The project must be pushed to a new repository and linked in EduFlow by the end of the day.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided and documentation.
+- To test the page, open it with your browser and inspect it with developer tools / device emulator.
+- Use Bootstrap4.6 classes to create the page.
+- Use containers, rows and cols in order to achieve a great responsive layout.
+
+NOTE:
+Most of the requirements in this exercises reference a bootstrap's functionality or component. 
+Make sure you check the documentation before creting anything custom.
+-->
+
+
+   
+    <!-- EXERCISE 3
+        For every album in the favorite list, attach a badge on the top-left corner of the album with the genre of the music
+    -->
+
+    <!-- EXERCISE 4
+        Create a new section with an album tracklist inside a Bootstrap table.
+        The row colors of the table must be alternated.
+
+        There should be a column for the track order number, one for the title and one for the track duration.
+        (If you want, you can also add extra columns)
+    -->
+
+    <!-- EXERCISE 5
+        Add a DELETE bootstrap button at the end of each row of the tracklist. 
+        Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
+
+        ## EXTRA CSS CHALLENGE ##
+        Make only one button visible at a time, for each row, when the single row gets hovered. 
+        Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
+    -->
+
+    <!-- EXERCISE 6
+        Add an "Add Track" button under the tracklist of the album. 
+        It should have a nice shadow transition when its hovered (with the box-shadow property) 
+        to look like as if the button was elevating itself.
+    -->
+
+    <!-- ############### -->
+    <!-- ###  EXTRA  ### -->
+    <!-- ############### -->
+
+    <!-- EXERCISE 7
+        On the click of "Add Track" button, a modal should appear.
+        (check in the documentation the modal + button example)
+        
+        The modal shall contain single input fields (avoid using a <form> to wrap the inputs) with:
+        - Track number
+        - Track title
+        - Track duration
+
+        The fields should be inside an Input Group and divided in 2 columns.
+    -->
+
+
+    <!-- EXERCISE 8
+        The modal should contain 2 buttons at the bottom:
+        - Add => Adds a new track in the tracklist with the data of the input fields.
+        - Close => closes the modal
+
+        https://getbootstrap.com/docs/4.6/components/alerts/
+        [EXTRA] Make the message disappear after 5 seconds
+        https://www.w3schools.com/jsref/met_win_settimeout.asp
+    -->
+
+    <!-- EXERCISE 9
+        Alert the user with a success message when the track gets added, or when a track gets deleted.
+     -->
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+       
+     
+    <link rel="stylesheet" href="style.css">
+
+    <title>Music for life</title>
+
+
+</head>
+
+<body>
+ 
+        --
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Albums</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Favourite</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Chester</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"href="#bio">Bio</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+  
+       <!-- EXERCISE 1
+        Create a Jumbotron section with a quick explanation / image of the website.
+        Make it appear with a fade-in animation effect when the page loads.
+    -->
+<main>
+
+    <div>
+        <div class="jumbotron">
+            <div class="container">
+             <h1 class="display-4">MY Music</h1>
+            
+             <hr class="my-4" style="border:1px solid">
+            <p>This is my current listening choice</p>
+        </div>
+    </div>
+</div>
+
+
+            <!-- EXERCISE 2
+        Use a Bootstrap Card to contain every album in the favorite list you previously created.
+        Use the elements of a card bootstrap provides you with to display nicely the album informations such as: album title, artist, year, etc
+            -->
+  
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/2a/Linkin_Park_Hybrid_Theory_Album_Cover.jpg"
+                        class="card-img-top" alt="Hybrid theory album cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Hybrid Theory</h5>
+                        <p class="card-text">Genre: alternative Rock
+                            Released:October 24,
+                            2000</p>
+                        <a href="https://en.wikipedia.org/wiki/Hybrid_Theory" class="btn btn-primary">Album Bio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Linkin_Park_Meteora_Album_Cover.jpg/220px-Linkin_Park_Meteora_Album_Cover.jpg"
+                        class="card-img-top" alt="Meteora ablum cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Genre:Rock
+                            Released:March 25 2003,</p>
+                        <a href="https://en.wikipedia.org/wiki/Meteora_(album)" class="btn btn-primary">Album Bio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Minutes_to_Midnight_cover.jpg"
+                        class="card-img-top" alt="Minutes to Midnight">
+                    <div class="card-body">
+                        <h5 class="card-title">Minutes to Midnight</h5>
+                        <p class="card-text">Genre:Rock Released: May 25, 2007
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Minutes_to_Midnight_(Linkin_Park_album)"
+                            class="btn btn-primary">Album Bio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/af/A_Thousand_Suns_Cover2.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">A Thousand Suns</h5>
+                        <p class="card-text">Genre:Rock Released: September 14, 2010</p>
+                        <a href="#" class="btn btn-primary">Album Bio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/27/War_is_the_Answer_Album_Art.JPG"
+                        class="card-img-top" alt="war is the answer">
+                    <div class="card-body">
+                        <h5 class="card-title">War is the answer</h5>
+                        <p class="card-text">Genre:Rock Released: September 14, 2010</p>
+                        <a href="#" class="btn btn-primary">Album Bio</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Bad_Wolves_-_Nation.png"
+                        class="card-img-top" alt="ALBUM COVER">
+                    <div class="card-body">
+                        <h5 class="card-title">N.A.T.I.O.N</h5>
+                        <p class="card-text">Genre:Rock Released: September 14, 2010</p>
+                        <a href="https://en.wikipedia.org/wiki/N.A.T.I.O.N." class="btn btn-primary">Album Bio</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/2c/Metallica_-_Metallica_cover.jpg"
+                        class="card-img-top" alt=Album cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Metallica</h5>
+                        <p class="card-text">Genre:Rock Released: September 14, 2010</p>
+                        <a href="https://metallica.com/releases/singles-eps/4293/enter-sandman"
+                            class="btn btn-primary">Album Bio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/df/FFDPGotYourSix.png" class="card-img-top"
+                        alt="album cover...">
+                    <div class="card-body">
+                        <h5 class="card-title">Got Your Six</h5>
+                        <p class="card-text">Genre:HardRock Released: 2015</p>
+                        <a href="https://en.wikipedia.org/wiki/Got_Your_Six" class="btn btn-primary">Album Bio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- EXERCISE 4
+            Create a section for the album reviews.
+            Pick one of your favourite albums, and create a section with:
+            - Cover Image
+            - Title
+            - Band
+            - Duration
+            - Genre
+            - Tracklist
+            - ... And whatever you think it's interesting about it!
+        -->
+
+    <section>
+        <h1>Favourite Album</h1>
+
+        <html>
+            <head>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                <link rel="stylesheet" href="style.css" type="text/css">
+            </head>
+            <body>
+                <div class="card-container mx-auto mt-5">
+                    <div class="card card-front">
+                      <img class="card-img-top" src="card-img.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+                    <div class="card card-back">
+                      <div class="card-body bg-warning">
+                        <a href="#" class="btn btn-success">Go somewhere</a>
+                      </div>
+                    </div>
+                </div>
+            </body>
+    </section>
+
+    <!-- EXERCISE 5
+            Worst album list! Choose the albums you dislike or some you think are overrated and list it
+            in this "hall of shame" chart! 
+        -->
+    <div>
+        <h1>Wall Of Shame</h1>
+    </div>
+
+    <ol>
+        <li>Island Boys</li>
+        <li>Island Boys</li>
+        <li>Island Boys</li>
+
+    </ol>
+    <!-- EXERCISE 6
+            Do you have any musician / band you admire or you are a fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+    <section>
+        <h1>Tribute</h1>
+        <div><a class="tribute" href="https://en.wikipedia.org/wiki/Chester_Bennington"> Chester Bennington</a></div>
+    </section>
+
+    <!-- EXERCISE 7
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "squared" (use CSS to achieve that).
+            Put at least 20 covers (also repeated) to have a nice tapestry effect and see how Bootstrap handles it.
+        -->
+    <div>Album collection</div>
+    <!-- EXERCISE 8
+            Implement a footer with some information / social links.
+        -->
+    <div class="container">
+        <footer>
+            <a id="bio" href="https://en.wikipedia.org/wiki/Linkin_Park"> LINKIN PARK</a>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+</main>       
+</body>
+
+</html>
+<!-- ############ EXTRA:
+        EXERCISE 9
+            Create an album details area which will be toggled on and off by clicking on the album image.
+        -->
+
+<!-- EXERCISE 10
+            Add a button to each section. By clicking on it the section body appears (if hidden) or disappears (if visible).
+            (hint: look for a boostrap component that can handle the job for you. You can always rely on DOM manipulation if you can't find it)
+        -->
+
+<!--
+         EXERCISE 11
+            Add in the footer the number of how many ALBUMS are present on the page. 
+            Create the JavaScript logic that runs when the page finished loading and 
+            counts the albums and applies the number in the area of the footer you've previously decided.
+        --> b 

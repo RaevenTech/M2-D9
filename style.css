@@ -12,7 +12,9 @@ body {
 
 .navbar {
     background: #0d0e18ee;
+    height: 5vh;
 }
+
 .album-container {
     text-align: center;
 }

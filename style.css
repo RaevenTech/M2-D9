@@ -9,6 +9,10 @@ body {
     background-attachment: fixed;
     color: aliceblue;
 }
+
+.navbar {
+    background: #0d0e18ee;
+}
 .album-container {
     text-align: center;
 }
